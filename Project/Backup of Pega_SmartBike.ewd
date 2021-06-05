@@ -11,7 +11,7 @@
             <name>C-SPY</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>32</version>
+                <version>30</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -88,7 +88,7 @@
                 </option>
                 <option>
                     <name>OCLastSavedByProductVersion</name>
-                    <state>8.50.6.28950</state>
+                    <state>8.30.2.18207</state>
                 </option>
                 <option>
                     <name>UseFlashLoader</name>
@@ -183,6 +183,14 @@
                     <state>1</state>
                 </option>
                 <option>
+                    <name>OCMulticoreMaster</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>OCMulticorePort</name>
+                    <state>53461</state>
+                </option>
+                <option>
                     <name>OCMulticoreWorkspace</name>
                     <state></state>
                 </option>
@@ -208,18 +216,6 @@
                 </option>
                 <option>
                     <name>OCMulticoreNrOfCoresSlave</name>
-                    <state>1</state>
-                </option>
-                <option>
-                    <name>OCMulticoreAMPConfigType</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>OCMulticoreSessionFile</name>
-                    <state></state>
-                </option>
-                <option>
-                    <name>OCTpiuBaseOption</name>
                     <state>1</state>
                 </option>
             </data>
@@ -1007,7 +1003,7 @@
             <name>STLINK_ID</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>7</version>
+                <version>5</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -1105,7 +1101,7 @@
                 </option>
                 <option>
                     <name>CCSTLinkJtagSpeedList</name>
-                    <version>2</version>
+                    <version>1</version>
                     <state>0</state>
                 </option>
                 <option>
@@ -1118,11 +1114,6 @@
                 </option>
                 <option>
                     <name>CCSTLinkUseServerSelect</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>CCSTLinkProbeList</name>
-                    <version>1</version>
                     <state>0</state>
                 </option>
             </data>
@@ -1437,19 +1428,15 @@
                 <loadFlag>0</loadFlag>
             </plugin>
             <plugin>
-                <file>$TOOLKIT_DIR$\plugins\rtos\RemedyRtosViewer\RemedyRtosViewer.ewplugin</file>
-                <loadFlag>0</loadFlag>
-            </plugin>
-            <plugin>
                 <file>$TOOLKIT_DIR$\plugins\rtos\SafeRTOS\SafeRTOSPlugin.ewplugin</file>
                 <loadFlag>0</loadFlag>
             </plugin>
             <plugin>
-                <file>$TOOLKIT_DIR$\plugins\rtos\SMX\smxAwareIarArm8b.ewplugin</file>
+                <file>$TOOLKIT_DIR$\plugins\rtos\SMX\smxAwareIarArm8.ewplugin</file>
                 <loadFlag>0</loadFlag>
             </plugin>
             <plugin>
-                <file>$TOOLKIT_DIR$\plugins\rtos\SMX\smxAwareIarArm8bBE.ewplugin</file>
+                <file>$TOOLKIT_DIR$\plugins\rtos\SMX\smxAwareIarArm8BE.ewplugin</file>
                 <loadFlag>0</loadFlag>
             </plugin>
             <plugin>
@@ -1471,6 +1458,10 @@
             <plugin>
                 <file>$TOOLKIT_DIR$\plugins\rtos\uCOS-III\uCOS-III-KA-CSpy.ewplugin</file>
                 <loadFlag>0</loadFlag>
+            </plugin>
+            <plugin>
+                <file>$EW_DIR$\common\plugins\CodeCoverage\CodeCoverage.ENU.ewplugin</file>
+                <loadFlag>1</loadFlag>
             </plugin>
             <plugin>
                 <file>$EW_DIR$\common\plugins\Orti\Orti.ENU.ewplugin</file>
@@ -1496,7 +1487,7 @@
             <name>C-SPY</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>32</version>
+                <version>30</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -1668,6 +1659,14 @@
                     <state></state>
                 </option>
                 <option>
+                    <name>OCMulticoreMaster</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>OCMulticorePort</name>
+                    <state>53461</state>
+                </option>
+                <option>
                     <name>OCMulticoreWorkspace</name>
                     <state></state>
                 </option>
@@ -1693,18 +1692,6 @@
                 </option>
                 <option>
                     <name>OCMulticoreNrOfCoresSlave</name>
-                    <state>1</state>
-                </option>
-                <option>
-                    <name>OCMulticoreAMPConfigType</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>OCMulticoreSessionFile</name>
-                    <state></state>
-                </option>
-                <option>
-                    <name>OCTpiuBaseOption</name>
                     <state>1</state>
                 </option>
             </data>
@@ -2492,7 +2479,7 @@
             <name>STLINK_ID</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>7</version>
+                <version>5</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -2590,7 +2577,7 @@
                 </option>
                 <option>
                     <name>CCSTLinkJtagSpeedList</name>
-                    <version>2</version>
+                    <version>1</version>
                     <state>0</state>
                 </option>
                 <option>
@@ -2603,11 +2590,6 @@
                 </option>
                 <option>
                     <name>CCSTLinkUseServerSelect</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>CCSTLinkProbeList</name>
-                    <version>1</version>
                     <state>0</state>
                 </option>
             </data>
@@ -2922,19 +2904,15 @@
                 <loadFlag>0</loadFlag>
             </plugin>
             <plugin>
-                <file>$TOOLKIT_DIR$\plugins\rtos\RemedyRtosViewer\RemedyRtosViewer.ewplugin</file>
-                <loadFlag>0</loadFlag>
-            </plugin>
-            <plugin>
                 <file>$TOOLKIT_DIR$\plugins\rtos\SafeRTOS\SafeRTOSPlugin.ewplugin</file>
                 <loadFlag>0</loadFlag>
             </plugin>
             <plugin>
-                <file>$TOOLKIT_DIR$\plugins\rtos\SMX\smxAwareIarArm8b.ewplugin</file>
+                <file>$TOOLKIT_DIR$\plugins\rtos\SMX\smxAwareIarArm8.ewplugin</file>
                 <loadFlag>0</loadFlag>
             </plugin>
             <plugin>
-                <file>$TOOLKIT_DIR$\plugins\rtos\SMX\smxAwareIarArm8bBE.ewplugin</file>
+                <file>$TOOLKIT_DIR$\plugins\rtos\SMX\smxAwareIarArm8BE.ewplugin</file>
                 <loadFlag>0</loadFlag>
             </plugin>
             <plugin>
@@ -2956,6 +2934,10 @@
             <plugin>
                 <file>$TOOLKIT_DIR$\plugins\rtos\uCOS-III\uCOS-III-KA-CSpy.ewplugin</file>
                 <loadFlag>0</loadFlag>
+            </plugin>
+            <plugin>
+                <file>$EW_DIR$\common\plugins\CodeCoverage\CodeCoverage.ENU.ewplugin</file>
+                <loadFlag>1</loadFlag>
             </plugin>
             <plugin>
                 <file>$EW_DIR$\common\plugins\Orti\Orti.ENU.ewplugin</file>

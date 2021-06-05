@@ -64,7 +64,6 @@ void BT966_Proc(void)
         QUEUE_Get(&BT966CommandQueue, (u8*)&BT966_command);
         CH430_Send(BT966CommandBuff , BT966_COMMAND_MAX_SIZE);
     }
-
 }
 
 /*!

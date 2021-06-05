@@ -66,7 +66,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>8.50.6.28950</state>
+                    <state>8.30.2.18207</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -116,7 +116,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>28</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -133,7 +133,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>28</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -156,7 +156,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>28</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -215,7 +215,7 @@
             <name>ICCARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>36</version>
+                <version>34</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -475,14 +475,6 @@
                     <name>IccRTTI2</name>
                     <state>0</state>
                 </option>
-                <option>
-                    <name>OICompilerExtraOption</name>
-                    <state>1</state>
-                </option>
-                <option>
-                    <name>CCStackProtection</name>
-                    <state>0</state>
-                </option>
             </data>
         </settings>
         <settings>
@@ -703,7 +695,7 @@
             <name>ILINK</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>23</version>
+                <version>21</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -1019,26 +1011,6 @@
                     <name>IlinkTrustzoneImportLibraryOut</name>
                     <state>Pega_SmartBike_import_lib.o</state>
                 </option>
-                <option>
-                    <name>OILinkExtraOption</name>
-                    <state>1</state>
-                </option>
-                <option>
-                    <name>IlinkRawBinaryFile2</name>
-                    <state></state>
-                </option>
-                <option>
-                    <name>IlinkRawBinarySymbol2</name>
-                    <state></state>
-                </option>
-                <option>
-                    <name>IlinkRawBinarySegment2</name>
-                    <state></state>
-                </option>
-                <option>
-                    <name>IlinkRawBinaryAlign2</name>
-                    <state></state>
-                </option>
             </data>
         </settings>
         <settings>
@@ -1183,7 +1155,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>28</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1200,7 +1172,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>28</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1223,7 +1195,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>28</version>
+                    <version>26</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1282,7 +1254,7 @@
             <name>ICCARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>36</version>
+                <version>34</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -1530,14 +1502,6 @@
                     <name>IccRTTI2</name>
                     <state>0</state>
                 </option>
-                <option>
-                    <name>OICompilerExtraOption</name>
-                    <state>1</state>
-                </option>
-                <option>
-                    <name>CCStackProtection</name>
-                    <state>0</state>
-                </option>
             </data>
         </settings>
         <settings>
@@ -1758,7 +1722,7 @@
             <name>ILINK</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>23</version>
+                <version>21</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -2073,26 +2037,6 @@
                 <option>
                     <name>IlinkTrustzoneImportLibraryOut</name>
                     <state>###Unitialized###</state>
-                </option>
-                <option>
-                    <name>OILinkExtraOption</name>
-                    <state>1</state>
-                </option>
-                <option>
-                    <name>IlinkRawBinaryFile2</name>
-                    <state></state>
-                </option>
-                <option>
-                    <name>IlinkRawBinarySymbol2</name>
-                    <state></state>
-                </option>
-                <option>
-                    <name>IlinkRawBinarySegment2</name>
-                    <state></state>
-                </option>
-                <option>
-                    <name>IlinkRawBinaryAlign2</name>
-                    <state></state>
                 </option>
             </data>
         </settings>
