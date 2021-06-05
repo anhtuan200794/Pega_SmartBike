@@ -20,10 +20,10 @@
 
 typedef void (*type_UartCallBackInit)(USART_TypeDef*);
 
-#define UART1_GPIO           GPIOA
-#define UART1_RxPin          GPIO_Pin_10
-#define UART1_TxPin          GPIO_Pin_9
-#define UART1_GPIO_CLK       RCC_APB2Periph_GPIOA
+#define UART1_GPIO           GPIOB
+#define UART1_RxPin          GPIO_Pin_7
+#define UART1_TxPin          GPIO_Pin_6
+#define UART1_GPIO_CLK       RCC_APB2Periph_GPIOB
 #define UART1_CLK            RCC_APB2Periph_USART1
 
 #define UART2_GPIO           GPIOA

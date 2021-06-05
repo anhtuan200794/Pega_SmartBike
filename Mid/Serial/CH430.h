@@ -19,8 +19,8 @@
 
 #define CH430_COM               USART1
 #define CH430_BAUDRATE          115200
-#define CH430_COMMAND_MAX_SIZE  2
-#define CH430_QUEUE_SIZE        10
+#define CH430_COMMAND_MAX_SIZE  1
+#define CH430_QUEUE_SIZE        2
 
 
 void CH430_Init(void);

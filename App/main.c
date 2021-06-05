@@ -43,9 +43,10 @@ int main()
 	BT966_Init();
 	CH430_Init();
 	NVIC_Config_Init();
-	
 	while (1)
 	{
-		BT966_Proc();
+            BT966_Proc();
+            //CH430_Proc();
+            //CH430_Send(&c,1);
 	}
 }

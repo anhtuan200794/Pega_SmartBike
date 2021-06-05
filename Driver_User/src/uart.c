@@ -30,6 +30,8 @@ void UART_PinInit(USART_TypeDef *USARTx)
     GPIO_InitTypeDef GPIO_InitStructure;
     if (USARTx == CH430_COM)
     {
+        /* Remap pin A9 A10 -> B6 B7 */
+        GPIO_PinRemapConfig(GPIO_Remap_USART1,ENABLE);
         /*Config USART1 Rx as input floating */
         GPIO_InitStructure.GPIO_Pin = UART1_RxPin;
         GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
@@ -84,7 +86,7 @@ void UART_ClockInit(USART_TypeDef *USARTx)
         /*Enable AFIO clock*/
         RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
         /*Enable UART clock*/
-        RCC_APB2PeriphClockCmd(UART2_CLK, ENABLE);
+        RCC_APB1PeriphClockCmd(UART2_CLK, ENABLE);
     }
     else if (USARTx == GPS_COM)
     {
@@ -146,10 +148,8 @@ void USART1_IRQHandler(void)
 }
 void USART2_IRQHandler(void)
 {
-    if ((USART2->SR & USART_FLAG_RXNE) != (u16)RESET)
-    {
+    USART_ClearITPendingBit(USART3,USART_IT_RXNE);
         type_Uart2CallBackFunc(USART2);
-    }
 }
 
 void USART3_IRQHandler(void)
@@ -164,16 +164,17 @@ void UART_SendData(USART_TypeDef *USARTx, u8 *buff, u8 len)
 {
     for (u8 i = 0; i < len; i++)
     {
+      
         USART_SendData(USARTx, buff[i]);
-        while (USART_GetFlagStatus(USARTx, USART_FLAG_TXE) == RESET)
-            ;
+        while (USART_GetFlagStatus(USARTx, USART_FLAG_TC) == RESET);
+        
     }
 }
 
 u8 UART_GetData(USART_TypeDef *USARTx)
 {
     u8 datarx;
-    while (USART_GetFlagStatus(USARTx, USART_FLAG_RXNE) == RESET)
+    //while (USART_GetFlagStatus(USARTx, USART_FLAG_RXNE) == RESET)
         ;
     datarx = (u8)USART_ReceiveData(USARTx);
     return datarx;

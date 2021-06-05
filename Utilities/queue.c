@@ -68,8 +68,9 @@ u8    QUEUE_Get(QUEUEx_t *q, u8* buffer)
             q->out=0;
         }
 
-        memcpy((u8*)buffer,(u8*)&(q->p[q->out]),q->element_size);
-        q->out+=q->element_size;        
+        //memcpy((u8*)buffer,(u8*)&(q->p[q->out]),q->element_size);
+        *buffer = q->p[q->out];
+        q->out+=q->element_size;
         q->count--;
 
         return 1;

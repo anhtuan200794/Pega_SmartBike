@@ -12,7 +12,7 @@
 #include "queue.h"
 
 QUEUEx_t CH430CommandQueue;
-u8 CH430CommandBuff[CH430_COMMAND_MAX_SIZE];
+u8 CH430CommandBuff[CH430_QUEUE_SIZE];
 
 /******************************************************************************/
 /*                              FUNCTION                                      */
@@ -41,7 +41,7 @@ void CH430_CallBackHandle(USART_TypeDef* USARTx)
     static u8 revBuff[CH430_COMMAND_MAX_SIZE];
     u8 revByte = 0;
     
-    revByte = UART_GetData(USARTx);
+    revByte = UART_GetData(USART1);
     revBuff[revByteCount++] = revByte;
     if(revByteCount >= CH430_COMMAND_MAX_SIZE)
     {
@@ -56,13 +56,12 @@ void CH430_CallBackHandle(USART_TypeDef* USARTx)
  */
 void CH430_Proc(void)
 {
-    char* CH430_command;
+    static char CH430_command;
     if(!QUEUE_Empty(&CH430CommandQueue))
     {
         QUEUE_Get(&CH430CommandQueue, (u8*)&CH430_command);
-        
+        CH430_Send((u8*)&CH430_command,1);
     }
-
 }
 
 /*!
