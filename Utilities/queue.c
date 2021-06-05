@@ -38,7 +38,7 @@ u8    QUEUE_Push(QUEUEx_t *q,u8* data)
             q->out=0;
         }
 
-        q->out+=q->element_size;        
+        q->out+=q->element_size;
         q->count--;
     }
 
