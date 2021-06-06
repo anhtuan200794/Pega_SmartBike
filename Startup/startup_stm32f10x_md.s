@@ -120,7 +120,7 @@ __vector_table
         THUMB
 
         PUBWEAK Reset_Handler
-        SECTION .text:CODE:REORDER:NOROOT(1)
+        SECTION .text:CODE:NOROOT:REORDER(2)
 Reset_Handler
         LDR     R0, =SystemInit
         BLX     R0

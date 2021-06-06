@@ -38,15 +38,14 @@
  */
 int main()
 {
-	SystemInit();
-	SYSTICK_Init();
+    SYSTICK_Init();
 	BT966_Init();
 	CH430_Init();
 	NVIC_Config_Init();
+    CH430_Send("\r\n",2);
 	while (1)
 	{
-            BT966_Proc();
-            //CH430_Proc();
-            //CH430_Send(&c,1);
+        BT966_Proc();
 	}
+	return 0;
 }

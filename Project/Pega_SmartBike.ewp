@@ -222,6 +222,7 @@
                     <name>CCDefines</name>
                     <state>USE_STDPERIPH_DRIVER</state>
                     <state>STM32F10X_MD</state>
+                    <state>SYSCLK_FREQ_72MHz</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>

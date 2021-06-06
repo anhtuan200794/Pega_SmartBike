@@ -16,13 +16,12 @@
 /******************************************************************************/
 /*                              DEFINE                                        */
 /******************************************************************************/
-#define BT966_MAX_BUFF          100
-#define INCOMING_CALL           "+HFPSTAT=5"
-#define INCOMING_CALL_CMD_SIZE  21
-#define BT966_COM               USART2
-#define BT966_BAUDRATE          115200
-#define BT966_COMMAND_MAX_SIZE  1
-#define BT966_QUEUE_SIZE        100
+#define BT966_MAX_BUFF              100
+#define BT966_PREDICT_SIZE_BUFF     80
+#define INCOMING_CALL               "+HFPSTAT=5"
+#define INCOMING_CALL_EVENT_SIZE    23
+#define BT966_COM                   USART2
+#define BT966_BAUDRATE              115200
 
 
 void BT966_Init(void);

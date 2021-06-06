@@ -148,8 +148,8 @@ void USART1_IRQHandler(void)
 }
 void USART2_IRQHandler(void)
 {
-    USART_ClearITPendingBit(USART3,USART_IT_RXNE);
-        type_Uart2CallBackFunc(USART2);
+    USART_GetITStatus(USART2,USART_IT_ORE);
+    type_Uart2CallBackFunc(USART2);
 }
 
 void USART3_IRQHandler(void)
@@ -166,7 +166,7 @@ void UART_SendData(USART_TypeDef *USARTx, u8 *buff, u8 len)
     {
       
         USART_SendData(USARTx, buff[i]);
-        while (USART_GetFlagStatus(USARTx, USART_FLAG_TC) == RESET);
+        while(USART_GetFlagStatus(USARTx, USART_FLAG_TC) == RESET);
         
     }
 }

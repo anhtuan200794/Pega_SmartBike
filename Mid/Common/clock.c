@@ -22,6 +22,6 @@ void CLOCK_Config(void)
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
     /* GPIOB Periph clock enable */
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
-
+    
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
 }
