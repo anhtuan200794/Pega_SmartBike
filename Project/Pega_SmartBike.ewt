@@ -3066,6 +3066,9 @@
                 <name>$PROJ_DIR$\..\Driver_User\inc\spi.h</name>
             </file>
             <file>
+                <name>$PROJ_DIR$\..\Driver_User\inc\timer3.h</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\..\Driver_User\inc\tm_gps.h</name>
             </file>
             <file>
@@ -3087,6 +3090,9 @@
                 <name>$PROJ_DIR$\..\Driver_User\src\spi.c</name>
             </file>
             <file>
+                <name>$PROJ_DIR$\..\Driver_User\src\timer3.c</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\..\Driver_User\src\uart.c</name>
             </file>
         </group>
@@ -3095,6 +3101,12 @@
         <name>Mid</name>
         <group>
             <name>Button</name>
+            <file>
+                <name>$PROJ_DIR$\..\Mid\Button\button.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Mid\Button\button.h</name>
+            </file>
         </group>
         <group>
             <name>Common</name>
@@ -3142,6 +3154,15 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Mid\Serial\GPS.h</name>
+            </file>
+        </group>
+        <group>
+            <name>Speaker</name>
+            <file>
+                <name>$PROJ_DIR$\..\Mid\Speaker\speaker.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Mid\Speaker\speaker.h</name>
             </file>
         </group>
     </group>

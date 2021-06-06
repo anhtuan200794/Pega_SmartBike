@@ -1,22 +1,18 @@
-#ifndef __BUTTON_H__
-#define __BUTTON_H__
-#include "stm32f10x.h"
+#ifndef __SPEAKER_H__
+#define __SPEAKER_H__
 /*******************************************************************************
 * Definitions
 *******************************************************************************/
-#define BUTTON_GPIO             GPIOC
-#define BUTTON_CLK              RCC_APB2Periph_GPIOC
-#define BUTTON_1_PIN            GPIO_Pin_14
-#define BUTTON_2_PIN            GPIO_Pin_15
-/* interrupt */
-#define BUTTON_2_EXTI_LINE      EXTI_Line15
-#define BUTTON_1_EXTI_LINE      EXTI_Line14
-#define BUTTON_IRQn             EXTI15_10_IRQn
+#define SPEAKER_GPIO    GPIOC
+#define SPEAKER_PIN     GPIO_Pin_13
+#define SPEAKER_CLK     RCC_APB2Periph_GPIOC
 /*******************************************************************************
 * API
 *******************************************************************************/
-void BUTTON_Init(void);
-#endif    /*__BUTTON_H__*/
+void SPEAKER_Init();
+void SPEAKER_ON();
+void SPEAKER_OFF();
+#endif    /*__SPEAKER_H__*/
 /*******************************************************************************
 * EOF
 *******************************************************************************/

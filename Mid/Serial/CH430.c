@@ -7,17 +7,33 @@
 
 #include "CH430.h"
 #include "uart.h"
+#include "timer3.h"
+#include "speaker.h"
 #include "stm32f10x_usart.h"
 #include "xor.h"
+#include "systick.h"
 #include "queue.h"
 
+/*******************************************************************************
+* Definitions
+*******************************************************************************/
+#define SET_SPEAK     0
+#define RESET_SPEAK   1
+/*******************************************************************************
+* Variable
+*******************************************************************************/
+volatile uint8_t IS_SPEAKER_ON_FLAG = RESET_SPEAK;
+volatile uint8_t IsSpeak;
 QUEUEx_t CH430CommandQueue;
 u8 CH430CommandBuff[CH430_QUEUE_SIZE];
 
 /******************************************************************************/
 /*                              FUNCTION                                      */
 /******************************************************************************/
-
+void CH430_Speak()
+{
+    IsSpeak = !IsSpeak;
+}
 /*!
  * @brief functions CH430_Init.
  *
@@ -26,8 +42,8 @@ void CH430_Init(void)
 {
     UART_Init(CH430_COM, CH430_BAUDRATE, USART_Mode_Tx|USART_Mode_Rx);
     UART_CallBackInit(CH430_COM, CH430_CallBackHandle);
-    QUEUE_Init(&CH430CommandQueue, (u8*)CH430CommandBuff,\
-                CH430_QUEUE_SIZE, CH430_COMMAND_MAX_SIZE);
+    TIMER3_Init();
+    TIMER3_CallbackInit(CH430_Speak);
     USART_Cmd(CH430_COM, ENABLE);
 }
 
@@ -37,16 +53,18 @@ void CH430_Init(void)
  */
 void CH430_CallBackHandle(USART_TypeDef* USARTx)
 {
-    static u8 revByteCount = 0;
-    static u8 revBuff[CH430_COMMAND_MAX_SIZE];
-    u8 revByte = 0;
-    
-    revByte = UART_GetData(USART1);
-    revBuff[revByteCount++] = revByte;
-    if(revByteCount >= CH430_COMMAND_MAX_SIZE)
+    uint8_t revbyte;
+    revbyte = UART_GetData(CH430_COM);
+    if(revbyte == '1')
     {
-        QUEUE_Push(&CH430CommandQueue, revBuff);
-        revByteCount = 0;
+        IS_SPEAKER_ON_FLAG = SET_SPEAK;
+        TIMER3_Start();
+    }
+    else
+    {
+        TIMER3_Stop();
+        IsSpeak = 0;
+        IS_SPEAKER_ON_FLAG = RESET_SPEAK;
     }
 }
 
@@ -56,13 +74,27 @@ void CH430_CallBackHandle(USART_TypeDef* USARTx)
  */
 void CH430_Proc(void)
 {
-    static char CH430_command;
-    if(!QUEUE_Empty(&CH430CommandQueue))
+    static uint8_t speakCountTime = 0;
+    if(IS_SPEAKER_ON_FLAG == SET_SPEAK)
     {
-        QUEUE_Get(&CH430CommandQueue, (u8*)&CH430_command);
-        CH430_Send((u8*)&CH430_command,1);
+        if(IsSpeak)
+        {
+            speakCountTime++;
+            SPEAKER_ON();
+            SYSTICK_Delay_ms(60);
+            SPEAKER_OFF();
+            IsSpeak = !IsSpeak;
+        }
+        if(speakCountTime == 5)
+        {
+            IS_SPEAKER_ON_FLAG = RESET_SPEAK;
+            TIMER3_Stop();
+        }
     }
+    else
+        speakCountTime = 0;
 }
+
 
 /*!
  * @brief functions CH430_Send.
